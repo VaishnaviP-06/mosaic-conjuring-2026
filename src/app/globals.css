@@ -143,3 +143,22 @@ body {
   border-radius: 8px;
   background: linear-gradient(#6a452b, #3b2418);
 }
+
+.input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  background:#2A231E;
+  border:1px solid rgba(200,169,106,.18);
+  color:#F5F1E8;
+  outline:none;
+}
+
+.input::placeholder{
+  color:#A8A29E;
+}
+
+.input:focus{
+  border-color:#C8A96A;
+  box-shadow:0 0 0 2px rgba(200,169,106,.15);
+}
