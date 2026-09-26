@@ -1,54 +1,35 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Play } from "lucide-react";
 
 export default function IntroPage() {
   const router = useRouter();
 
-  const [bookOpen, setBookOpen] = useState(false);
-  const [spider, setSpider] = useState(false);
-  const [ghost, setGhost] = useState(false);
-  const [button, setButton] = useState(false);
-
-  useEffect(() => {
-    const t1 = setTimeout(() => setBookOpen(true), 500);
-    const t2 = setTimeout(() => setSpider(true), 1700);
-    const t3 = setTimeout(() => setGhost(true), 3200);
-    const t4 = setTimeout(() => setGhost(false), 4300);
-    const t5 = setTimeout(() => setButton(true), 5000);
-
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-      clearTimeout(t4);
-      clearTimeout(t5);
-    };
-  }, []);
-
   return (
-    <main className="relative flex h-screen items-center justify-center overflow-hidden bg-[#090909]">
-
-
-      {ghost && (
-        <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/90">
-          <img
-            src="/ghost.png"
-            alt=""
-            className="h-[70vh] object-contain animate-pulse"
-          />
+    <main className="flex h-screen items-center justify-center bg-[#090909] text-[#F5F1E8]">
+      <div className="w-full max-w-3xl px-6 text-center">
+        <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full border border-[#C8A96A]/40 bg-[#C8A96A]/10">
+          <Play size={42} className="ml-1 text-[#C8A96A]" />
         </div>
-      )}
 
-      {button && (
+        <h1 className="font-cinzel text-5xl text-[#E8D9BF]">
+          CINEMATIC INTRO
+        </h1>
+
+        <p className="mt-6 leading-8 text-neutral-400">
+          The haunted book opening video will be placed here.
+          After the video finishes, it will automatically continue to the
+          event information page.
+        </p>
+
         <button
           onClick={() => router.push("/register")}
-          className="absolute bottom-16 z-50 rounded-md border border-[#C8A96A] bg-[#7A0C14] px-8 py-4 uppercase tracking-[0.3em] text-white transition hover:bg-[#93131E]"
+          className="mt-12 rounded-md border border-[#C8A96A] bg-[#7A0C14] px-8 py-4 text-sm font-semibold uppercase tracking-[0.25em] transition hover:bg-[#93131E]"
         >
-          Go Ahead
+          Continue
         </button>
-      )}
+      </div>
     </main>
   );
 }

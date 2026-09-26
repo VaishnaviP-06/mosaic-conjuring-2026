@@ -97,7 +97,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                onClick={() => router.push("/register")}
+                onClick={() => router.push("/intro")}
                 className="group mt-10 flex items-center gap-3 rounded-full border border-[#C8A96A] bg-[#7A0C14]/90 px-7 py-4 text-sm uppercase tracking-[0.2em] transition hover:bg-[#8E1019]"
               >
                 Enter The House
