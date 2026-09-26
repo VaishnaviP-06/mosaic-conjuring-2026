@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #090909;
+  color: #f5f1e8;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel), serif;
+}
+
+/* ================= BOOK ================= */
+
+.book-scene {
+  perspective: 1800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book {
+  width: 300px;
+  height: 410px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.back-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #2f1d14, #1b120d);
+  border: 2px solid #7d5a37;
+}
+
+.pages {
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  background: #ead9ba;
+  display: flex;
+  overflow: hidden;
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  padding: 18px;
+  background: #f4e6c9;
+}
+
+.left-page {
+  border-right: 1px solid #c8b08a;
+}
+
+.right-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.writing {
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    to bottom,
+    #9b8462 0px,
+    #9b8462 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+.symbol svg {
+  width: 90px;
+}
+
+.front-cover {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #3b2418, #21130d);
+  border: 2px solid #9d7348;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.cover-border {
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(200, 169, 106, 0.35);
+  border-radius: 10px;
+}
+
+.cover-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e8d9bf;
+  text-align: center;
+}
+
+.cross {
+  font-size: 30px;
+  color: #c8a96a;
+  margin-bottom: 28px;
+}
+
+.cover-content h2 {
+  font-family: var(--font-cinzel);
+  font-size: 26px;
+}
+
+.cover-content h1 {
+  font-family: var(--font-cinzel);
+  font-size: 34px;
+  color: #c8a96a;
+}
+
+.cover-content p {
+  margin-top: 20px;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  color: #b99663;
+}
+
+.spine {
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  width: 10px;
+  height: 398px;
+  border-radius: 8px;
+  background: linear-gradient(#6a452b, #3b2418);
 }
